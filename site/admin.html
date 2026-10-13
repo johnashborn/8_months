@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin - Our Little Memories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="admin-wrap">
+
+    <div class="admin-top">
+      <div>
+        <h1>Admin</h1>
+        <div style="color:var(--soft)">Add, edit and remove photos. <a href="index.html" style="color:var(--accent)">View the gallery</a></div>
+      </div>
+      <button class="btn ghost small hidden" id="logout">Log out</button>
+    </div>
+
+    <!-- Login -->
+    <section class="panel" id="login-panel" style="max-width:420px">
+      <h2>Log in</h2>
+      <form id="login-form">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" required autocomplete="username">
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" required autocomplete="current-password">
+        </div>
+        <button class="btn" type="submit">Log in</button>
+        <div class="msg" id="login-msg"></div>
+      </form>
+    </section>
+
+    <!-- App -->
+    <div id="app" class="hidden">
+
+      <section class="panel">
+        <h2 id="form-title">Add a photo</h2>
+        <form id="photo-form" class="form-grid">
+          <div>
+            <div class="field">
+              <label for="file">Photo <span id="file-note"></span></label>
+              <input type="file" id="file" accept="image/*">
+            </div>
+            <div class="field">
+              <label for="caption">Caption</label>
+              <textarea id="caption" rows="2" maxlength="140" placeholder="our first date at the cafe"></textarea>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="month">Month label</label>
+                <input type="text" id="month" maxlength="40" placeholder="Month 1">
+              </div>
+              <div class="field">
+                <label for="taken">Date</label>
+                <input type="date" id="taken">
+              </div>
+            </div>
+            <div class="field">
+              <label for="tilt">Tilt: <span id="tilt-val">0</span>&deg;</label>
+              <div class="row">
+                <input type="range" id="tilt" min="-4" max="4" step="0.5" value="0" style="flex:3">
+                <button type="button" class="btn ghost small" id="shuffle" style="flex:1">Shuffle</button>
+              </div>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap">
+              <button class="btn" type="submit" id="save">Add photo</button>
+              <button class="btn ghost hidden" type="button" id="cancel-edit">Cancel edit</button>
+            </div>
+            <div class="msg" id="form-msg"></div>
+          </div>
+
+          <div>
+            <div class="preview-box">
+              <figure class="polaroid" id="preview" style="--tilt:0deg">
+                <div class="frame"><img id="prev-img" alt="Preview" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect width='10' height='10' fill='%23eee'/%3E%3C/svg%3E"></div>
+                <figcaption><span id="prev-cap">Your caption here</span><span class="when" id="prev-when"></span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Your photos (<span id="count">0</span>)</h2>
+        <div class="items" id="items"></div>
+        <div class="msg" id="list-msg"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

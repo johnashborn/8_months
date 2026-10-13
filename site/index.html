@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Our Little Memories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="gate" class="gate hidden">
+    <form id="gate-form" autocomplete="off">
+      <h2>Hi, love</h2>
+      <p id="gate-hint">Enter our secret word</p>
+      <input type="password" id="gate-input" aria-label="Passcode" autofocus>
+      <div class="err" id="gate-err"></div>
+      <button class="btn" type="submit">Open</button>
+    </form>
+  </div>
+
+  <header class="hero">
+    <h1 id="title">Our Little Memories</h1>
+    <p id="subtitle"></p>
+    <div class="hearts" aria-hidden="true">&#10084;</div>
+  </header>
+
+  <main id="gallery" class="gallery" aria-live="polite">
+    <div class="state">Loading our memories...</div>
+  </main>
+
+  <p class="closing" id="closing"></p>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lb-btn lb-close" id="lb-close" aria-label="Close">&times;</button>
+    <button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous photo">&#8249;</button>
+    <div class="card">
+      <img id="lb-img" alt="">
+      <div class="cap" id="lb-cap"></div>
+      <div class="when" id="lb-when"></div>
+    </div>
+    <button class="lb-btn lb-next" id="lb-next" aria-label="Next photo">&#8250;</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="gallery.js"></script>
+</body>
+</html>
