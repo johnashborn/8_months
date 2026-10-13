@@ -5,7 +5,7 @@
 // NEVER put the "service_role" key in this file.
 // ------------------------------------------------------------------
 window.APP_CONFIG = {
-  SUPABASE_URL: "https://ohnatcfqcqusnvbmwbjy.supabase.co/rest/v1/",
+  SUPABASE_URL: "https://ohnatcfqcqusnvbmwbjy.supabase.co",
   SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9obmF0Y2ZxY3F1c252Ym13Ymp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE4ODQ0NTEsImV4cCI6MjEwNzQ2MDQ1MX0.bSHjEqoYB5mE9htOmagsoooN8A44-U3c81fhSAnKJN4",
   BUCKET: "photos",
 
